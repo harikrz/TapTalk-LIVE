@@ -85,7 +85,7 @@ export default function Home() {
       else { await navigator.clipboard.writeText(link); setCopied(true); setTimeout(() => setCopied(false), 2500); }
     } catch (e) { if ((e as Error).name !== 'AbortError') setError('Could not share. Copy the address from your browser.'); }
   }
-  return <main className="shell"><div className="brand"><span className="brandIcon">◉</span><span>TapTalk</span></div><p className="eyebrow">YOUR PRIVATE VOICE ROOM</p><h1>Talk with one tap.</h1><p className="subtitle">Create a room, share a link, and talk instantly. No account needed. Powered By Cloud9.</p>
+  return <main className="shell"><div className="brand"><span className="brandIcon">◉</span><span>C9 TapTalk</span></div><p className="eyebrow">YOUR PRIVATE VOICE ROOM</p><h1>Talk with one tap.</h1><p className="subtitle">Create a room, share a link, and talk instantly. No account needed. Powered By Cloud9.</p>
     <section className="panel">
       {!connected ? <>
         <label htmlFor="name">Your name</label><input id="name" value={name} maxLength={32} onChange={e => setName(e.target.value)} placeholder="e.g. Hari" autoComplete="nickname" />
