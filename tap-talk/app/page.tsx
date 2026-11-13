@@ -85,10 +85,10 @@ export default function Home() {
       else { await navigator.clipboard.writeText(link); setCopied(true); setTimeout(() => setCopied(false), 2500); }
     } catch (e) { if ((e as Error).name !== 'AbortError') setError('Could not share. Copy the address from your browser.'); }
   }
-  return <main className="shell"><div className="brand"><span className="brandIcon">◉</span><span>TapTalk</span></div><p className="eyebrow">YOUR PRIVATE VOICE ROOM</p><h1>Talk with one tap.</h1><p className="subtitle">Create a room, share a link, and talk instantly. No account needed.</p>
+  return <main className="shell"><div className="brand"><span className="brandIcon">◉</span><span>TapTalk</span></div><p className="eyebrow">YOUR PRIVATE VOICE ROOM</p><h1>Talk with one tap.</h1><p className="subtitle">Create a room, share a link, and talk instantly. No account needed. Powered By Cloud9.</p>
     <section className="panel">
       {!connected ? <>
-        <label htmlFor="name">Your name</label><input id="name" value={name} maxLength={32} onChange={e => setName(e.target.value)} placeholder="e.g. Alex" autoComplete="nickname" />
+        <label htmlFor="name">Your name</label><input id="name" value={name} maxLength={32} onChange={e => setName(e.target.value)} placeholder="e.g. Hari" autoComplete="nickname" />
         <label htmlFor="room">6-digit room code</label><div className="codeRow"><input id="room" value={code} inputMode="numeric" maxLength={6} onChange={e => setCode(e.target.value.replace(/\D/g, ''))} placeholder="Enter room code" /><button className="secondary" onClick={() => setCode(makeCode())}>New code</button></div>
         <button className="primary" disabled={busy} onClick={() => void join(code)}>{busy ? 'Connecting…' : 'Join room'}</button>
         <p className="hint">To start a new room, tap “New code” and then “Join room”.</p>
@@ -99,6 +99,6 @@ export default function Home() {
         <button className="leave" onClick={() => void leave()}>Leave room</button>
       </>}
       {error && <p role="alert" className="error">{error}</p>}
-    </section><div ref={audioRef} className="hiddenAudio" aria-hidden="true"/><p className="footer">Works best while this page stays open. Use headphones to prevent echo.</p>
+    </section><div ref={audioRef} className="hiddenAudio" aria-hidden="true"/><p className="footer">Copyright_Hari.nomad Works best while this page stays open. Use headphones to prevent echo.</p>
   </main>;
 }
